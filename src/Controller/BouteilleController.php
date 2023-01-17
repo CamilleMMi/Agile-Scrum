@@ -16,9 +16,9 @@ class BouteilleController extends AbstractController {
         $resultat = "";
 
         foreach($bouteilles as $bouteille) {
-            $resultat += "bouteilles " . $bouteille;
+            $resultat .= $bouteille->getName() . " " .$bouteille->getQuantity() . "<br>";
         }
 
-        return new Response("liste : " + $resultat);
+        return new Response("Quantités en stock : <br>" . $resultat);
     }
 }
